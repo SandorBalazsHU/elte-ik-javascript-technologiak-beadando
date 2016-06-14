@@ -1,0 +1,1 @@
+Az ELTE IK JavaScript technológiák tárgyának beadandó feladata.
