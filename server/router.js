@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var example = require('../app/renders/example');
 var game = require('../app/renders/game');
 
     //Router-level middleware
