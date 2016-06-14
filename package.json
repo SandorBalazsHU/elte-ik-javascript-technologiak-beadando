@@ -1,0 +1,29 @@
+{
+  "name": "plumberjs",
+  "version": "0.1.0",
+  "description": "Az ELTE IK JavaScript technológiák tárgyának beadandó feladata.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandorBalazsHU/plumberJS.git"
+  },
+  "author": "Sándor Balázs",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "express-ejs-layouts": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  },
+  "bugs": {
+    "url": "https://github.com/SandorBalazsHU/plumberJS/issues"
+  },
+  "homepage": "https://github.com/SandorBalazsHU/plumberJS#readme"
+}
