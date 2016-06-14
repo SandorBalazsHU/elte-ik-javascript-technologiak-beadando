@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var example = require('../app/renders/example');
 
     //Router-level middleware
     //Hit on every route starting with '/*'
@@ -10,23 +11,25 @@ var router = express.Router();
         next();
     });
 
-    router.get('/apple', function (req, res, next) {
+    //Endpoint-apple
+    router.get('/apple', function (req, res) {
         console.log('/apple');
-        next();
+        example.render(res);
     });
 
+    //Endpoint-map
     router.route('/map')
-    .get (function (req, res, next) {
+    .get (function (req, res) {
         console.log('/map-get');
-        next();
+        example.render(res);
     })
-    .post(function (req, res, next) {
+    .post(function (req, res) {
         console.log('/map-post');
-        next();
+        example.render(res);
     })
-    .put (function (req, res, next) {
+    .put (function (req, res) {
         console.log('/map-put');
-        next();
+        example.render(res);
     });
 
     module.exports = router;

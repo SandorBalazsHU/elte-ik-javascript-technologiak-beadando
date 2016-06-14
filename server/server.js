@@ -1,10 +1,19 @@
+//Oldalak
+var error404 = require('../app/renders/404');
+
+//Változók
 var express = require('express');
 var http = require('http');
 var router = require('./router');
 var app = express();
 var port = process.env.PORT || 80;
+
 //Node - Express http server
 http.createServer(app).listen(port);
+
+//EJS - template system
+app.set('views', './app/templates');
+app.set('view engine', 'ejs');
 
 //Csak mert olcsó volt!
 app.use(express.static('public'));
@@ -12,7 +21,6 @@ app.use(express.static('public'));
 //Application-level middleware
 //Hit by any route
 app.use(function (req, res, next) {
-    console.log('Middleware:');
     next();
 });
 
@@ -20,8 +28,8 @@ app.use(function (req, res, next) {
 app.use(router);
 
 //Endpoint-level middleware
-app.use(function (req, res, next) {
-    console.log('Endpoint/');
+app.use(function (req, res) {
+    error404.render(res)
 });
 
 //Error handler
@@ -35,5 +43,5 @@ module.exports = {
     http: http,
     router: router,
     app: app,
-    prt: port,
+    prt: port
 };
