@@ -1,5 +1,5 @@
 //Oldalak
-var error404 = require('../app/renders/404');
+var error404 = require('../app/renders/sys/404');
 
 //Változók
 var express = require('express');
@@ -19,10 +19,10 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 //Application-level middleware
-//Hit by any route
+/*/Hit by any route
 app.use(function (req, res, next) {
     next();
-});
+});*/
 
 //Router-level middleware
 app.use(router);
