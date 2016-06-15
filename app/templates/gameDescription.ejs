@@ -1,0 +1,60 @@
+        <section id="gameDescription">
+            <h2>Játékleírás:</h2>
+            <section>
+                <h3>Vízvezeték-szerelő:</h3>
+                <p>
+                    Csöpi, a vízvezeték-szerelő nagy bajban van.
+                    Nemsokára megnyitják a vízcsapot, de még nincs kialakítva a csőrendszer a vízcsap és a kivezetés között.
+                    Segíts Csöpinek a csőhálózat kialakításában, hogy a víz zavartalanul jusson el a vízcsaptól a kivezetésig!
+                </p>
+                <h3>Játékmechanikák:</h3>
+                <p>
+                    <p>
+                        A játék egy NxM-es táblázatban játszódik.
+                    </p>
+                    <p>A pályák mérete és összetettsége folyamatosan nő.
+                        A mezőn többféle csődarab van elszórva, a kanyar és az egyenes véletlenszerűen elforgatva
+                        és további elemek az aktuális nehézségi szinthez igazodva (tégla, elágazás, törött cső stb.).
+                        A vízcsapok és kivezetések helye véletlenszerű, számuk az aktuális nehézségi szintektől függ.
+                        A pálya mindig véletlenszerűen generálódik, ügyelve rá, hogy minen pályának legyen megoldása.
+                    </p>
+                    <p>
+                        Az egyes csődarabokra kattintva a darabok az óramutató járásával megegyezően 90 fokkal fordulnak el.
+                        A törtött csőre jobbegérgombbal kattintva javításra kerül, csak ezután engedi át a vizet.
+                        Cél, hogy a megadott idő alatt a vízcsapot és a kivezetést összekössük.
+                    </p>
+                    <p>
+                        Az eltelt időt kétféleképpen jelöljük.
+                        Egyrészt számokkal is írjuk ki a hátralévő másodpercek számát, másrészt egy színes csík is jelölje,
+                        mennyi idő van hátra. Ez az idő pályánként külön meghatározható.
+                        Ha időn belül sikerül összekötni a két végpontot, akkor a vízcsapra kattintva megnyithatjuk a vizet.
+                        Ha letelik az idő, akkor a vízcsap automatikusan megnyílik.
+                        Megnyitás után a víz elkezd folyni a vezetékben, fél másodpercenként egy csődarabot töltve meg.
+                        Ezt megfelelő színezéssel jelöljük. Folyás közben a pálya már nem építhető. Ha a víz nem jut el
+                        a kivezetésig, akkor a pályát újra kell kezdeni. Sikeres összekötés esetén pontszámítás következik,
+                        és lehet a következő pályára lépni.
+                    </p>
+                </p>
+            </section>
+            <h2>Technikai leírás:</h2>
+            <section>
+                <h3>Server-Middleware-Client:</h3>
+                <p>
+                    Az alkalmazást egy Node JS - Express segítségével kszült webszerver szolgálja ki.
+                    Middleware-ként megvalósításra került egy egyszerű hibakezelés is.
+                    A kliens egy REST API-n keresztül elmenti a legenerált pályákat egy NoDB-be és egy md5-hash-t generál hozzá.
+                    A hash sgítségével ellenőrzi, hogy volt-e már ilyen pálya és ha az elmúlt héten volt akkor újat generál.
+                    Ennek az a célja, hogy egy pályagyűjteményt generáljanak a felhasználók, és hogy csökkentsük az ismétlődéseket.
+                </p>
+                <p>
+                    A kliens oldalon a játék nézeteinek kezelését a Backbone.js végzi.
+                    A tényleges játéklogika is a Backbone MVC-jében került megvalósítra, itt generálódnak a pályák.
+                    A MAP-ek mentésere kerülnek egy REST API-n keresztül.
+                </p>
+            </section>
+            <section>
+                <section id="techSMCImage">
+                    <img src="app/images/smc.jpg" alt="smc"> 
+                </section>
+            </section>
+        </section>

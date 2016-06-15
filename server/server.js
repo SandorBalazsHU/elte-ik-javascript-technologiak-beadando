@@ -16,7 +16,7 @@ app.set('views', './app/templates');
 app.set('view engine', 'ejs');
 
 //Csak mert olcsó volt!
-app.use(express.static('public'));
+app.use(express.static('./'));
 
 //Application-level middleware
 /*/Hit by any route
